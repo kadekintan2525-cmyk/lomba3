@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruang Ibu - Komunitas StuntingCRACK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { 
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            background-color: #fff5f7; 
+        }
+
+        .pink-gradient {
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+        }
+
+        .nav-link { 
+            transition: all 0.3s ease; 
+            position: relative; 
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link.active { 
+            color: #db2777; 
+        }
+        
+        .nav-link.active::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -2px; 
+            left: 0; 
+            width: 100%; 
+            height: 2px; 
+            background: #db2777; 
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid #fce7f3;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(219, 39, 119, 0.1);
+        }
+
+        .forum-item {
+            border-left: 4px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .forum-item:hover {
+            border-left-color: #f472b6;
+            background-color: #fff1f2;
+        }
+
+        .forum-chat-area {
+            height: 400px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .custom-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.03);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #fbcfe8; border-radius: 10px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col tracking-wide text-slate-700">
+
+    <!-- NAVIGASI -->
+    <nav class="border-b border-pink-100 sticky top-0 z-50 bg-white/80 backdrop-blur-2xl">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <span class="text-xl font-bold text-slate-800">👶 StuntingCRACK</span>
+                </div>
+
+                <div class="hidden lg:flex space-x-10 text-sm font-semibold text-slate-500">
+                    <a href="menu-gizi.html" class="nav-link hover:text-pink-600">Menu Gizi</a>
+                    <a href="cek-tumbuh.html" class="nav-link hover:text-pink-600">Cek Tumbuh</a>
+                    <a href="pusat-info.html" class="nav-link hover:text-pink-600">Pusat Info</a>
+                    <a href="ruang-ibu.html" class="nav-link active flex items-center gap-1">
+                        <i class="fas fa-heart text-pink-500 text-[10px]"></i> Ruang Ibu
+                    </a>
+                </div>
+
+                <div class="lg:hidden text-pink-500 text-xl cursor-pointer" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO RUANG IBU -->
+    <header class="pink-gradient pt-20 pb-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block bg-white/40 border border-white/50 backdrop-blur-xl px-5 py-2 rounded-full text-[10px] font-bold mb-6 tracking-widest uppercase text-pink-700">
+                Tempat Nyaman Berbagi Cerita
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-800">Ruang Ibu: Saling Menguatkan</h1>
+            <p class="text-pink-900/70 text-lg max-w-2xl mx-auto font-medium">
+                Karena setiap ibu punya cerita, dan setiap cerita punya kekuatan untuk menginspirasi ibu lainnya.
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-6 py-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- KOLOM KIRI: POJOK CERITA IBU -->
+        <div class="lg:col-span-8 space-y-10">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-3">
+                    <i class="fas fa-feather-alt text-pink-400"></i> Cerita Ibu Hari Ini
+                </h2>
+                <button onclick="openStoryModal()" class="text-xs font-bold text-pink-600 hover:text-pink-700 flex items-center gap-2 bg-pink-50 px-4 py-2 rounded-full transition-all">
+                    <i class="fas fa-pen-nib"></i> Tulis Cerita
+                </button>
+            </div>
+
+            <!-- List Cerita -->
+            <div class="grid grid-cols-1 gap-6" id="storyList">
+                <!-- Cerita 1 -->
+                <div class="story-card p-8 custom-shadow border-l-4 border-l-pink-400">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Ibu+Sari&background=fdf2f8&color=db2777" class="w-12 h-12 rounded-full border-2 border-pink-100" alt="Ibu Sari">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Ibu Sari</h4>
+                            <p class="text-[10px] text-slate-400 font-medium">2 jam yang lalu • Anak usia 2th</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Perjalananku Melawan Diagnosa Stunting</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Awalnya hancur sekali hati ini saat dokter bilang si kecil masuk zona merah. Tapi saya tidak menyerah. Mulai dari perbaikan menu telur setiap hari hingga stimulasi bermain...
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <button onclick="giveHug(this)" class="flex items-center gap-2 text-xs font-bold text-pink-500 hover:scale-110 transition-transform">
+                                <i class="far fa-heart"></i> Peluk (24)
+                            </button>
+                            <button class="flex items-center gap-2 text-xs font-bold text-slate-400">
+                                <i class="far fa-comment"></i> 8 Komentar
+                            </button>
+                        </div>
+                        <span class="text-[10px] bg-pink-50 text-pink-600 px-3 py-1 rounded-full font-bold uppercase tracking-tighter">Inspirasi</span>
+                    </div>
+                </div>
+
+                <!-- Cerita 2 -->
+                <div class="story-card p-8 custom-shadow border-l-4 border-l-pink-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://ui-avatars.com/api/?name=Bunda+Maya&background=fdf2f8&color=db2777" class="w-12 h-12 rounded-full border-2 border-pink-100" alt="Bunda Maya">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm">Bunda Maya</h4>
+                            <p class="text-[10px] text-slate-400 font-medium">5 jam yang lalu • Anak usia 14bln</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Pentingnya Suami dalam Masa MPASI</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Seringkali kita merasa sendirian di dapur menyiapkan nutrisi terbaik. Tapi ternyata dukungan mental dari suami adalah bumbu paling penting agar kita tetap waras...
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <button onclick="giveHug(this)" class="flex items-center gap-2 text-xs font-bold text-pink-500 hover:scale-110 transition-transform">
+                                <i class="far fa-heart"></i> Peluk (15)
+                            </button>
+                            <button class="flex items-center gap-2 text-xs font-bold text-slate-400">
+                                <i class="far fa-comment"></i> 3 Komentar
+                            </button>
+                        </div>
+                        <span class="text-[10px] bg-blue-50 text-blue-600 px-3 py-1 rounded-full font-bold uppercase tracking-tighter">Dukungan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KOLOM KANAN: FORUM DISKUSI -->
+        <div class="lg:col-span-4 space-y-8">
+            <!-- Forum Box -->
+            <div class="bg-white rounded-[2.5rem] custom-shadow border border-pink-100 overflow-hidden" id="forumContainer">
+                <!-- Forum Header -->
+                <div class="bg-pink-500 p-6 text-white flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg flex items-center gap-2">
+                            <i class="fas fa-comments"></i> Forum Diskusi
+                        </h3>
+                        <p class="text-[10px] opacity-80 uppercase font-bold tracking-widest mt-1" id="forumStatus">Tanya Jawab & Diskusi</p>
+                    </div>
+                    <button id="backToTopics" class="hidden text-white/80 hover:text-white transition-colors" onclick="showTopics()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+                
+                <!-- Topic List -->
+                <div id="topicList" class="p-2">
+                    <div class="forum-item p-4 cursor-pointer" onclick="joinDiscussion('Tips MPASI Lahap')">
+                        <h5 class="text-sm font-bold text-slate-800 mb-1">Tips MPASI Lahap</h5>
+                        <p class="text-[11px] text-slate-500">32 Ibu sedang berdiskusi</p>
+                    </div>
+                    <div class="forum-item p-4 cursor-pointer" onclick="joinDiscussion('Vaksinasi & Demam')">
+                        <h5 class="text-sm font-bold text-slate-800 mb-1">Vaksinasi & Demam</h5>
+                        <p class="text-[11px] text-slate-500">12 Ibu sedang bertanya</p>
+                    </div>
+                    <div class="forum-item p-4 cursor-pointer border-l-pink-400 bg-pink-50/30" onclick="joinDiscussion('Curhat Me-Time Ibu')">
+                        <h5 class="text-sm font-bold text-slate-800 mb-1">Curhat "Me-Time" Ibu</h5>
+                        <p class="text-[11px] text-pink-500 font-bold">Topik Hangat!</p>
+                    </div>
+                    <div class="forum-item p-4 cursor-pointer" onclick="joinDiscussion('Tumbuh Kembang 0-12bln')">
+                        <h5 class="text-sm font-bold text-slate-800 mb-1">Tumbuh Kembang 0-12bln</h5>
+                        <p class="text-[11px] text-slate-500">45 Diskusi aktif</p>
+                    </div>
+                </div>
+
+                <!-- Forum Chat View (Hidden by Default) -->
+                <div id="forumChatView" class="hidden flex flex-col">
+                    <div class="forum-chat-area p-4 bg-slate-50 space-y-4" id="chatMessages">
+                        <!-- Messages will appear here -->
+                        <div class="flex flex-col gap-1 items-start">
+                            <span class="text-[9px] font-bold text-pink-400 ml-2">Moderator</span>
+                            <div class="bg-white p-3 rounded-2xl rounded-tl-none text-[12px] shadow-sm max-w-[85%] border border-pink-50">
+                                Selamat bergabung di grup diskusi! Mari berbagi dengan santun ya Bunda.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white border-t border-slate-100 flex gap-2">
+                        <input type="text" id="forumInput" placeholder="Ketik pesan..." class="flex-grow bg-slate-100 border-none rounded-xl px-4 py-2 text-xs focus:ring-2 focus:ring-pink-300 outline-none">
+                        <button onclick="sendForumMessage()" class="bg-pink-500 text-white w-8 h-8 rounded-xl flex items-center justify-center hover:bg-pink-600 transition-all">
+                            <i class="fas fa-paper-plane text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Join Button (Only for Topic List) -->
+                <div class="p-6 bg-slate-50 border-t border-slate-100" id="joinButtonSection">
+                    <button class="w-full bg-pink-500 text-white py-3 rounded-2xl text-xs font-bold hover:bg-pink-600 transition-all shadow-lg shadow-pink-200" onclick="joinDiscussion('Umum')">
+                        Gabung Diskusi Baru
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ibu Hebat Pekan Ini -->
+            <div class="bg-white p-6 rounded-[2rem] custom-shadow border border-pink-50 text-center">
+                <div class="w-16 h-16 bg-pink-100 rounded-full mx-auto flex items-center justify-center mb-4 border-4 border-white shadow-md">
+                    <i class="fas fa-crown text-pink-500 text-xl"></i>
+                </div>
+                <h4 class="text-sm font-bold text-slate-800 mb-1">Ibu Aktif Pekan Ini</h4>
+                <p class="text-[10px] text-slate-400 mb-4 uppercase tracking-widest">Bunda Fitri</p>
+                <div class="flex justify-center -space-x-3 mb-4">
+                    <img src="https://ui-avatars.com/api/?name=Bunda+Fitri&background=fdf2f8&color=db2777" class="w-10 h-10 rounded-full border-2 border-white">
+                </div>
+                <p class="text-[11px] text-slate-500 italic">"Terima kasih sudah aktif membantu menjawab pertanyaan ibu-ibu lainnya!"</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 py-12 px-6 text-center mt-auto">
+        <div class="max-w-7xl mx-auto">
+            <span class="text-xl font-bold text-white mb-4 block">👶 StuntingCRACK</span>
+            <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">© 2024 RUANG IBU INDONESIA. TEMPAT KITA BERBAGI.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL TULIS CERITA (HIDDEN) -->
+    <div id="storyModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-6">
+        <div class="bg-white w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-2xl scale-95 transition-transform duration-300">
+            <div class="pink-gradient p-8 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-slate-800 italic">Tulis Ceritaku</h3>
+                <button onclick="closeStoryModal()" class="text-slate-500 hover:text-slate-800">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-8 space-y-6">
+                <div>
+                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">Judul Cerita</label>
+                    <input type="text" id="storyTitle" placeholder="Misal: Perjuanganku Memasak Setiap Pagi" class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:ring-4 focus:ring-pink-500/10 focus:border-pink-300">
+                </div>
+                <div>
+                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 block">Ceritamu</label>
+                    <textarea id="storyContent" rows="5" placeholder="Tuliskan pengalamanmu di sini..." class="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:ring-4 focus:ring-pink-500/10 focus:border-pink-300 resize-none"></textarea>
+                </div>
+                <button onclick="postStory()" class="w-full bg-pink-500 text-white py-4 rounded-2xl text-sm font-bold hover:bg-pink-600 transition-all shadow-lg shadow-pink-200">
+                    Publikasikan Cerita
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Diskusi Forum Logic
+        function joinDiscussion(topic) {
+            document.getElementById('topicList').classList.add('hidden');
+            document.getElementById('joinButtonSection').classList.add('hidden');
+            document.getElementById('forumChatView').classList.remove('hidden');
+            document.getElementById('backToTopics').classList.remove('hidden');
+            document.getElementById('forumStatus').innerText = "Grup: " + topic;
+            
+            // Scroll to bottom
+            const chatBox = document.getElementById('chatMessages');
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function showTopics() {
+            document.getElementById('topicList').classList.remove('hidden');
+            document.getElementById('joinButtonSection').classList.remove('hidden');
+            document.getElementById('forumChatView').classList.add('hidden');
+            document.getElementById('backToTopics').classList.add('hidden');
+            document.getElementById('forumStatus').innerText = "Tanya Jawab & Diskusi";
+        }
+
+        function sendForumMessage() {
+            const input = document.getElementById('forumInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatMessages = document.getElementById('chatMessages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = "flex flex-col gap-1 items-end";
+            msgDiv.innerHTML = `
+                <span class="text-[9px] font-bold text-slate-400 mr-2">Bunda (Kamu)</span>
+                <div class="bg-pink-500 text-white p-3 rounded-2xl rounded-tr-none text-[12px] shadow-sm max-w-[85%]">
+                    ${message}
+                </div>
+            `;
+            chatMessages.appendChild(msgDiv);
+            input.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Mock Reply
+            setTimeout(() => {
+                const replyDiv = document.createElement('div');
+                replyDiv.className = "flex flex-col gap-1 items-start";
+                replyDiv.innerHTML = `
+                    <span class="text-[9px] font-bold text-pink-400 ml-2">Bunda Laila</span>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none text-[12px] shadow-sm max-w-[85%] border border-pink-50">
+                        Wah, setuju banget sama idenya Bunda!
+                    </div>
+                `;
+                chatMessages.appendChild(replyDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+        }
+
+        document.getElementById('forumInput')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendForumMessage();
+        });
+
+        // Story Logic
+        function openStoryModal() {
+            const modal = document.getElementById('storyModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.firstElementChild.classList.remove('scale-95');
+                modal.firstElementChild.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeStoryModal() {
+            const modal = document.getElementById('storyModal');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        function postStory() {
+            const title = document.getElementById('storyTitle').value;
+            const content = document.getElementById('storyContent').value;
+
+            if(!title || !content) return;
+
+            const storyList = document.getElementById('storyList');
+            const newStory = document.createElement('div');
+            newStory.className = "story-card p-8 custom-shadow border-l-4 border-l-pink-500 animate-pulse";
+            
+            newStory.innerHTML = `
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="https://ui-avatars.com/api/?name=Bunda+Kamu&background=fdf2f8&color=db2777" class="w-12 h-12 rounded-full border-2 border-pink-100">
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">Bunda Kamu</h4>
+                        <p class="text-[10px] text-slate-400 font-medium">Baru saja • Anak Hebat</p>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-4">${title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">${content}</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <button onclick="giveHug(this)" class="flex items-center gap-2 text-xs font-bold text-pink-500 transition-transform">
+                            <i class="far fa-heart"></i> Peluk (0)
+                        </button>
+                        <button class="flex items-center gap-2 text-xs font-bold text-slate-400">
+                            <i class="far fa-comment"></i> 0 Komentar
+                        </button>
+                    </div>
+                    <span class="text-[10px] bg-slate-50 text-slate-600 px-3 py-1 rounded-full font-bold uppercase tracking-tighter">Cerita Baru</span>
+                </div>
+            `;
+
+            storyList.prepend(newStory);
+            
+            setTimeout(() => {
+                newStory.classList.remove('animate-pulse');
+            }, 1000);
+
+            closeStoryModal();
+            document.getElementById('storyTitle').value = '';
+            document.getElementById('storyContent').value = '';
+        }
+
+        function giveHug(btn) {
+            const icon = btn.querySelector('i');
+            if(icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.classList.add('scale-125');
+                setTimeout(() => btn.classList.remove('scale-125'), 200);
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+            }
+        }
+    </script>
+</body>
+</html>
