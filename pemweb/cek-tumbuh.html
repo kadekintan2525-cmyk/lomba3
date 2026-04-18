@@ -281,5 +281,28 @@
             badge.innerText = `Z-SCORE: ${zScore.toFixed(2)} | ${title.innerText.toUpperCase()}`;
         }
     </script>
+    async function tanyaAI() {
+    const nama = document.getElementById("namaAnak").value;
+    const umur = document.getElementById("umurAnak").value;
+    const tinggi = document.getElementById("tinggiAnak").value;
+
+    const prompt = `
+Anak bernama ${nama}, umur ${umur} bulan, tinggi ${tinggi} cm.
+Berikan analisis stunting dan saran makanan sehat.
+    `;
+
+    const res = await fetch("/api/ai", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ prompt })
+    });
+
+    const data = await res.json();
+
+    document.getElementById("aiResultText").innerText = data.result;
+}
+
 </body>
 </html>
