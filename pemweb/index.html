@@ -5,13 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StuntingCRACK</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  /* Menyesuaikan ukuran font dan padding khusus layar HP */
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2.25rem !important; /* Ukuran text hero lebih pas di HP */
+      line-height: 1.2 !important;
+    }
+    section {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+    }
+    .grid {
+      gap: 1.5rem !important;
+    }
+    nav .space-x-6 {
+      display: none; /* Sembunyikan menu link panjang di HP agar tidak berantakan */
+    }
+  }
+</style>
 </head>
 
 <body class="bg-gray-100 font-sans tracking-wide overflow-x-hidden">
 
 <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent text-white">
   <div class="p-4 flex justify-between max-w-6xl mx-auto">
-    <h1 class="text-xl font-bold">👶 StuntingCRACK</h1>
+    <h1 class="text-xl font-bold"> StuntingCRACK</h1>
     <div class="space-x-6">
       <a href="#tentang" class="hover:text-blue-200">Tentang Kami</a>
       <a href="#fitur" class="hover:text-blue-200">Fitur</a>
@@ -27,19 +46,18 @@
   <div class="relative z-10 max-w-6xl mx-auto px-4">
     
     <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-      Cegah Stunting Sejak Dini dengan Pemantauan Kesehatan Anak
+    Temani Tumbuh Kembang Anak dengan Solusi Terpadu
     </h1>
 
     <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-16">
-      Platform kesehatan digital berbasis AI untuk memantau pertumbuhan anak, 
-      mendeteksi risiko stunting, dan memberikan rekomendasi nutrisi yang tepat 
-      demi mendukung generasi Indonesia yang sehat dan optimal.
+      Platform kesehatan digital berbasis AI yang membantu orang tua memantau pertumbuhan anak, mendapatkan rekomendasi gizi, mengakses informasi terpercaya,
+       serta terhubung dalam komunitas untuk mendukung tumbuh kembang anak secara optimal.
     </p>
 
     <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
       <div class="bg-white/20 backdrop-blur-md p-5 rounded-xl">
         <p class="text-2xl font-bold mb-1">+40%</p>
-        <p class="text-blue-100 text-sm">Peningkatan Kesehatan</p>
+        <p class="text-blue-100 text-sm">Pencegahan Stunting</p>
       </div>
 
       <div class="bg-white/20 backdrop-blur-md p-5 rounded-xl">
@@ -54,9 +72,7 @@
     </div>
 
     <div class="mt-10">
-      <a href="tumbuhkembang.html" 
-         class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-100 transition">
-         Mulai Cek Tumbuh Kembang
+    
       </a>
     </div>
 
@@ -80,13 +96,9 @@
     </h2>
 
     <p class="text-gray-600 leading-relaxed text-justify text-lg">
-      StuntingCRACK adalah platform kesehatan digital yang dirancang untuk membantu orang tua 
-      dalam memantau pertumbuhan dan perkembangan anak secara akurat dan berbasis data. 
-      Dengan pendekatan teknologi dan kecerdasan buatan (AI), platform ini mampu mendeteksi 
-      risiko stunting sejak dini, memberikan rekomendasi nutrisi yang sesuai dengan kebutuhan anak, 
-      serta menyediakan edukasi kesehatan yang mudah dipahami guna mendukung pertumbuhan optimal 
-      pada masa emas perkembangan anak.
-    </p>
+      StuntingCRACK adalah platform kesehatan digital yang dirancang untuk mendampingi orang tua dalam memantau tumbuh kembang anak secara akurat dan berbasis data. Dengan dukungan teknologi dan kecerdasan buatan (AI), platform ini membantu mendeteksi risiko stunting sejak dini, memberikan rekomendasi gizi yang sesuai dengan kebutuhan anak, serta menyediakan informasi kesehatan yang mudah dipahami.
+
+Lebih dari itu, StuntingCRACK juga menghadirkan ruang berbagi bagi orang tua untuk saling terhubung, bertukar pengalaman, dan mendapatkan dukungan dalam memastikan anak tumbuh sehat dan optimal pada masa emas perkembangannya.
   </div>
 </section>
 
@@ -106,8 +118,7 @@
       <div class="space-y-3">
         <h3 class="text-lg font-bold">Menu Gizi</h3>
         <p class="text-orange-100 text-sm">
-          Rekomendasi makanan berdasarkan usia dan kebutuhan nutrisi anak.
-        </p>
+          Temukan menu sehat dan bergizi untuk anak, lengkap dengan rekomendasi yang disesuaikan dengan usia dan kebutuhan nutrisinya.>
       </div>
     </a>
 
@@ -119,7 +130,7 @@
       <div class="space-y-3">
         <h3 class="text-lg font-bold">Tumbuh Kembang</h3>
         <p class="text-blue-100 text-sm">
-          Analisis tinggi & berat badan untuk deteksi dini stunting.
+          Pantau pertumbuhan anak melalui pengukuran tinggi dan berat badan yang dianalisis berdasarkan standar WHO untuk mendeteksi risiko stunting secara lebih akurat.
         </p>
       </div>
     </a>
@@ -132,7 +143,7 @@
       <div class="space-y-3">
         <h3 class="text-lg font-bold">Pusat Info</h3>
         <p class="text-cyan-100 text-sm">
-          Artikel kesehatan anak berbasis edukasi dan data terpercaya.
+          Akses berbagai artikel kesehatan anak yang disusun berdasarkan edukasi dan sumber terpercaya.
         </p>
       </div>
     </a>
@@ -145,8 +156,7 @@
       <div class="space-y-3">
         <h3 class="text-lg font-bold">Ruang Ibu</h3>
         <p class="text-pink-100 text-sm">
-          Forum diskusi dan dukungan antar orang tua.
-        </p>
+          forum orang tua untuk berdiskusi, bertukar pengalaman, dan saling mendukung dalam mendampingi tumbuh kembang anak secara optimal.
       </div>
     </a>
 
@@ -176,7 +186,7 @@
     <div>
       <h3 class="text-xl font-bold mb-3 text-white">Kontak</h3>
       <p>Email: info@stuntingcrack.id</p>
-      <p>Telepon: +62 812-3456-7890</p>
+      <p>Telepon: +62 85 334 467 321</p>
       <p>Jakarta, Indonesia</p>
     </div>
 

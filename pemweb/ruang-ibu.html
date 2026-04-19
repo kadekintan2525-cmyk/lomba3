@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruang Ibu - Komunitas StuntingCRACK</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  /* Kode ini akan merapikan SEMUA halaman saat dibuka di HP */
+  @media (max-width: 640px) {
+    /* 1. Mencegah judul terlalu besar di semua halaman */
+    h1 {
+      font-size: 2rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    /* 2. Mencegah teks heading kedua agar tidak terlalu rapat */
+    h2 {
+      font-size: 1.5rem !important;
+    }
+
+    /* 3. Memberikan ruang di pinggir layar agar konten tidak mentok */
+    section, main, .container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    /* 4. Merapikan navigasi agar tidak tumpang tindih */
+    nav .space-x-6, nav .hidden.lg\:flex {
+      display: none !important;
+    }
+
+    /* 5. Memastikan gambar tidak melewati lebar layar HP */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* 6. Memastikan tombol atau inputan memenuhi lebar layar agar mudah diklik */
+    input, button.w-full-mobile {
+      width: 100% !important;
+    }
+  }
+</style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body { 
@@ -80,7 +118,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
-                    <span class="text-xl font-bold text-slate-800">👶 StuntingCRACK</span>
+                    <span class="text-xl font-bold text-slate-800"> StuntingCRACK</span>
                 </div>
 
                 <div class="hidden lg:flex space-x-10 text-sm font-semibold text-slate-500">
@@ -88,7 +126,7 @@
                     <a href="cek-tumbuh.html" class="nav-link hover:text-pink-600">Cek Tumbuh</a>
                     <a href="pusat-info.html" class="nav-link hover:text-pink-600">Pusat Info</a>
                     <a href="ruang-ibu.html" class="nav-link active flex items-center gap-1">
-                        <i class="fas fa-heart text-pink-500 text-[10px]"></i> Ruang Ibu
+                        <i class="fas text-pink-500 text-[10px]"></i> Ruang Ibu
                     </a>
                 </div>
 
@@ -105,9 +143,9 @@
             <div class="inline-block bg-white/40 border border-white/50 backdrop-blur-xl px-5 py-2 rounded-full text-[10px] font-bold mb-6 tracking-widest uppercase text-pink-700">
                 Tempat Nyaman Berbagi Cerita
             </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-800">Ruang Ibu: Saling Menguatkan</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-800">Berbagi Pengalaman Melalui Forum Ruang Ibu</h1>
             <p class="text-pink-900/70 text-lg max-w-2xl mx-auto font-medium">
-                Karena setiap ibu punya cerita, dan setiap cerita punya kekuatan untuk menginspirasi ibu lainnya.
+                Tempat berbagi pengalaman, berdiskusi, dan saling bertukar informasi seputar tumbuh kembang anak.
             </p>
         </div>
     </header>
@@ -264,8 +302,8 @@
     <!-- FOOTER -->
     <footer class="bg-slate-900 py-12 px-6 text-center mt-auto">
         <div class="max-w-7xl mx-auto">
-            <span class="text-xl font-bold text-white mb-4 block">👶 StuntingCRACK</span>
-            <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">© 2024 RUANG IBU INDONESIA. TEMPAT KITA BERBAGI.</p>
+            <span class="text-xl font-bold text-white mb-4 block">StuntingCRACK</span>
+            <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">© 2026 stuntingCRACK. Satu Platform, Hancurkan Stunting untuk Masa Depa</p>
         </div>
     </footer>
 

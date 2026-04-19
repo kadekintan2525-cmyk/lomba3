@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pusat Info - StuntingCRACK AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  /* Kode ini akan merapikan SEMUA halaman saat dibuka di HP */
+  @media (max-width: 640px) {
+    /* 1. Mencegah judul terlalu besar di semua halaman */
+    h1 {
+      font-size: 2rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    /* 2. Mencegah teks heading kedua agar tidak terlalu rapat */
+    h2 {
+      font-size: 1.5rem !important;
+    }
+
+    /* 3. Memberikan ruang di pinggir layar agar konten tidak mentok */
+    section, main, .container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    /* 4. Merapikan navigasi agar tidak tumpang tindih */
+    nav .space-x-6, nav .hidden.lg\:flex {
+      display: none !important;
+    }
+
+    /* 5. Memastikan gambar tidak melewati lebar layar HP */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* 6. Memastikan tombol atau inputan memenuhi lebar layar agar mudah diklik */
+    input, button.w-full-mobile {
+      width: 100% !important;
+    }
+  }
+</style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body { 
@@ -106,7 +144,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
-                    <span class="text-xl font-bold text-slate-800">👶 StuntingCRACK</span>
+                    <span class="text-xl font-bold text-slate-800"> StuntingCRACK</span>
                 </div>
 
                 <div class="hidden lg:flex space-x-10 text-sm font-semibold text-slate-500">
@@ -114,7 +152,7 @@
                     <a href="cek-tumbuh.html" class="nav-link hover:text-cyan-600">Cek Tumbuh</a>
                     <a href="pusat-info.html" class="nav-link active">Pusat Info</a>
                     <a href="ruang-ibu.html" class="nav-link hover:text-cyan-600 flex items-center gap-1">
-                        <i class="fas fa-heart text-pink-300 text-[10px]"></i> Ruang Ibu
+                        <i class="fas text-pink-300 text-[10px]"></i> Ruang Ibu
                     </a>
                 </div>
 
@@ -226,10 +264,10 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/30 shadow-inner">
-                                <i class="fas fa-robot text-lg"></i>
+                                <i class="fas text-lg"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-md">Tanya AI Stunting</h3>
+                                <h3 class="font-bold text-md">GrowAI</h3>
                                 <p class="text-[9px] font-bold opacity-80 uppercase tracking-widest">Sedia Membantu Tanpa Batas</p>
                             </div>
                         </div>
@@ -281,8 +319,8 @@
     <!-- FOOTER -->
     <footer class="bg-gray-900 py-12 px-6 text-center mt-auto">
         <div class="max-w-7xl mx-auto">
-            <span class="text-xl font-bold text-white mb-4 block">👶 StuntingCRACK</span>
-            <p class="text-xs text-gray-500 uppercase tracking-widest font-medium">© 2024 STUNTINGCRACK INDONESIA. SEMUA HAK DILINDUNGI.</p>
+            <span class="text-xl font-bold text-white mb-4 block"> StuntingCRACK</span>
+            <p class="text-xs text-gray-500 uppercase tracking-widest font-medium">© 2026 STUNTINGCRACK INDONESIA. Satu Platform, Hancurkan Stunting untuk Masa Depa</p>
         </div>
     </footer>
 

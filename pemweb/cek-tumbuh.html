@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pantau Tumbuh Kembang - StuntingCRACK</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  /* Kode ini akan merapikan SEMUA halaman saat dibuka di HP */
+  @media (max-width: 640px) {
+    /* 1. Mencegah judul terlalu besar di semua halaman */
+    h1 {
+      font-size: 2rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    /* 2. Mencegah teks heading kedua agar tidak terlalu rapat */
+    h2 {
+      font-size: 1.5rem !important;
+    }
+
+    /* 3. Memberikan ruang di pinggir layar agar konten tidak mentok */
+    section, main, .container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    /* 4. Merapikan navigasi agar tidak tumpang tindih */
+    nav .space-x-6, nav .hidden.lg\:flex {
+      display: none !important;
+    }
+
+    /* 5. Memastikan gambar tidak melewati lebar layar HP */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* 6. Memastikan tombol atau inputan memenuhi lebar layar agar mudah diklik */
+    input, button.w-full-mobile {
+      width: 100% !important;
+    }
+  }
+</style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -79,7 +117,7 @@
                 Pantau Tumbuh Kembang Anak Sejak Dini
             </h1>
             <p class="text-blue-50 text-lg md:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
-                Gunakan alat ukur digital berbasis standar WHO untuk mendeteksi dini risiko stunting dan memastikan masa depan buah hati Anda lebih optimal.
+                Gunakan pemantauan digital berbasis standar WHO untuk membantu mendeteksi risiko stunting lebih awal dan memastikan tumbuh kembang anak tetap optimal.
             </p>
         </div>
     </header>
@@ -89,7 +127,7 @@
         <div class="bg-white p-10 rounded-3xl shadow-xl shadow-blue-900/5 text-center border border-blue-50">
             <h2 class="text-xs font-black text-blue-500 uppercase tracking-[0.3em] mb-4">Apa itu Cek Tumbuh Kembang?</h2>
             <p class="text-slate-600 text-sm leading-relaxed mb-8">
-                Fitur ini membantu Bunda memantau pertumbuhan fisik anak dengan membandingkan tinggi badan terhadap usianya (TB/U). Kami menggunakan perhitungan Z-Score standar **World Health Organization (WHO)** yang akurat untuk memberikan indikasi dini status gizi Si Kecil.
+               Fitur ini membantu Ibu memantau pertumbuhan fisik anak dengan membandingkan tinggi badan sesuai usianya (TB/U). Analisis dilakukan menggunakan perhitungan Z-Score berdasarkan standar World Health Organization (WHO) untuk memberikan gambaran awal status gizi dan risiko stunting pada Si Kecil.
             </p>
             
             <button onclick="document.getElementById('input-section').scrollIntoView({behavior: 'smooth'})" class="bg-blue-500 text-white font-bold px-10 py-4 rounded-full shadow-lg shadow-blue-200 hover:bg-blue-600 transition-all flex items-center gap-2 mx-auto">
@@ -192,10 +230,10 @@
     <footer class="py-12 px-6">
         <div class="max-w-7xl mx-auto text-center">
             <div class="flex items-center justify-center gap-2 mb-4">
-                <span class="text-lg font-bold text-white tracking-tight">👶 StuntingCRACK</span>
+                <span class="text-lg font-bold text-white tracking-tight"> StuntingCRACK</span>
             </div>
             <p class="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">
-                © 2024 STUNTINGCRACK INDONESIA. SEMUA HAK DILINDUNGI.
+                © 2026 STUNTINGCRACK INDONESIA. Satu Platform, Hancurkan Stunting untuk Masa Depa
             </p>
         </div>
     </footer>
