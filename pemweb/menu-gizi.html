@@ -135,6 +135,13 @@
             </div>
         </div>
     </nav>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b px-6 py-4 space-y-4">
+    <a href="menu-gizi.html" class="block text-sm font-semibold text-orange-600">Menu Gizi</a>
+    <a href="cek-tumbuh.html" class="block text-sm font-semibold text-slate-600">Cek Tumbuh</a>
+    <a href="pusat-info.html" class="block text-sm font-semibold text-slate-600">Pusat Info</a>
+    <a href="ruang-ibu.html" class="block text-sm font-semibold text-slate-600">Ruang Ibu</a>
+</div>
+
 
     <header class="hero-gradient pt-32 pb-32 px-6 text-center">
         <div class="max-w-4xl mx-auto">
@@ -471,6 +478,17 @@
         initFirebase();
     </script>
     <script src="script.js"></script>
+    <script>
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+</script>
+
 
 </body>
 </html>
